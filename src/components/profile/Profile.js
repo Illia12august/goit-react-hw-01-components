@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import {ProfileContainer, Avatar, Name} from './profile.styled'
+import {ProfileContainer, Avatar, Name, Descr, Stats, StatsEl} from './profile.styled'
 const Profile = ({username, tag, location, avatar, stats}) => {
   return (
     <ProfileContainer>
@@ -10,24 +10,24 @@ const Profile = ({username, tag, location, avatar, stats}) => {
         
         />
         <Name>{username}</Name>
-        <p>{tag}</p>
-        <p>{location}</p>
+        <Descr>{tag}</Descr>
+        <Descr>{location}</Descr>
       </div>
 
-      <ul>
-        <li>
-          <span>Followers</span>
+      <Stats>
+        <StatsEl>
+          <span>Followers </span>
           <span>{stats.followers}</span>
-        </li>
-        <li>
-          <span>Views</span>
+        </StatsEl>
+        <StatsEl>
+          <span>Views </span>
           <span>{stats.views}</span>
-        </li>
-        <li>
-          <span>Likes</span>
+        </StatsEl>
+        <StatsEl>
+          <span>Likes </span>
           <span>{stats.likes}</span>
-        </li>
-      </ul>
+        </StatsEl>
+      </Stats>
     </ProfileContainer>
   );
 }
