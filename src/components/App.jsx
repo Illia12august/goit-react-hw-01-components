@@ -1,6 +1,9 @@
 import Profile from "./profile/Profile";
-// import StatisticList from './statistics/Statistics'
+import StatisticList from './statistics/StatisticList'
+import statistics from './statistics/data.json';
 import user from './profile/user.json'
+import FriendList from "./friends/FriendList";
+import friends from './friends/friends.json'
 export default function App() {
   return (
     <>
@@ -11,7 +14,10 @@ export default function App() {
       avatar={user.avatar}
       stats={user.stats}
       />
-      {/* <StatisticList /> */}
+      <StatisticList 
+      statistics={statistics}
+      />
+      <FriendList friends={friends}/>
     </>
   );
 };
