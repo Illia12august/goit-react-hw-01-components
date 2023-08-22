@@ -1,23 +1,24 @@
 // import PropTypes from 'prop-types'
-export default function TransactionList(trasactions) {
+import { Table, TableHead, TableEl } from './transactions.styled'
+export default function TransactionList(transactions) {
   return (
-    <table>
-      <thead>
+    <Table>
+      <TableHead>
         <tr>
-          <th></th>
-          <th></th>
-          <th></th>
+          <TableEl>type</TableEl>
+          <TableEl>amount</TableEl>
+          <TableEl>currency</TableEl>
         </tr>
-      </thead>
+      </TableHead>
       <tbody>
-        {trasactions.trasactions.map(trasaction => (
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
+        {transactions.transactions.map(transaction => (
+          <tr key={transaction.id}>
+            <TableEl>{transaction.type}</TableEl>
+            <TableEl>{transaction.amount}</TableEl>
+            <TableEl>{transaction.currency}</TableEl>
           </tr>
         ))}
       </tbody>
-    </table>
+    </Table>
   );
 }
