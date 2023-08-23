@@ -6,13 +6,14 @@ function getRandomColorRGB() {
   const blue = Math.floor(Math.random() * 256);
   return `rgb(${red}, ${green}, ${blue})`;
 }
-export default function StatisticList(statistics) {
+export default function StatisticList({ statistics, title }) {
+  console.log(statistics)
   return (
     <Stat>
-      <Title>Upload stats</Title>
+      {title && <Title>Upload stats</Title>}
 
       <StatList>
-        {statistics.statistics.map(statistic => {
+        {statistics.map(statistic => {
           return (
             <Item
               key={statistic.id}
@@ -32,5 +33,6 @@ StatisticList.propType = {
     id: PropTypes.string.isRequired,
     label: PropTypes.string.isRequired,
     percentage: PropTypes.number.isRequired,
-  })
+  }),
+  title: PropTypes.string.isRequired,
 };
