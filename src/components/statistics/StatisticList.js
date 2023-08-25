@@ -7,10 +7,10 @@ function getRandomColorRGB() {
   return `rgb(${red}, ${green}, ${blue})`;
 }
 export default function StatisticList({ statistics, title }) {
-  console.log(statistics)
+  
   return (
     <Stat>
-      {title && <Title>Upload stats</Title>}
+      {title && <Title>{title}</Title>}
 
       <StatList>
         {statistics.map(statistic => {
